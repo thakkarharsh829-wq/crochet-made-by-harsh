@@ -1,0 +1,22 @@
+<svg width="360" height="120" viewBox="0 0 360 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="yarnGradient" x1="25" y1="20" x2="85" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f5c0c6"/>
+      <stop offset="100%" stop-color="#d88a9c"/>
+    </linearGradient>
+    <linearGradient id="hookGradient" x1="85" y1="20" x2="115" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#d99a72"/>
+      <stop offset="100%" stop-color="#a66746"/>
+    </linearGradient>
+  </defs>
+  <circle cx="52" cy="60" r="38" fill="url(#yarnGradient)"/>
+  <path d="M32 50C28 46 24 42 24 36C24 28 31 22 40 22C48 22 52 26 56 32" stroke="#fff1f0" stroke-width="6" stroke-linecap="round"/>
+  <path d="M42 76C36 72 30 66 30 58C30 52 34 47 40 44" stroke="#fff1f0" stroke-width="6" stroke-linecap="round"/>
+  <path d="M58 38C74 32 90 32 102 44" stroke="#fff1f0" stroke-width="6" stroke-linecap="round"/>
+  <path d="M58 80C74 86 92 86 104 74" stroke="#fff1f0" stroke-width="6" stroke-linecap="round"/>
+  <path d="M72 18C76 12 86 8 94 12L116 28C122 32 128 42 124 48C120 54 110 58 102 56" stroke="url(#hookGradient)" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <path d="M116 28C118 34 118 42 113 46" stroke="url(#hookGradient)" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <text x="138" y="52" fill="#7a453d" font-family="'Playfair Display', Georgia, serif" font-size="36" font-weight="700">Crochette</text>
+  <text x="138" y="82" fill="#8a6b5b" font-family="Inter, sans-serif" font-size="16" letter-spacing="0.1em">Crochet</text>
+  <text x="138" y="105" fill="#b58170" font-family="Inter, sans-serif" font-size="12" letter-spacing="0.15em">Made by Harsh</text>
+</svg>

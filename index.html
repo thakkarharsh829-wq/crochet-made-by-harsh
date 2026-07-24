@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cozy Crochet Studio</title>
+    <meta
+      name="description"
+      content="Handmade crochet pieces for cozy living, thoughtful gifts, and everyday style."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav container">
+        <a href="#home" class="brand">Cozy Crochet Studio</a>
+        <div class="nav-links">
+          <a href="#shop">Shop</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+
+      <div class="hero-content container" id="home">
+        <div>
+          <p class="eyebrow">Handmade with love</p>
+          <h1>Soft stitches, cozy style, one-of-a-kind crochet.</h1>
+          <p class="hero-text">
+            Discover charming handmade pieces made for comfort, gifting, and everyday beauty.
+          </p>
+          <a class="btn btn-primary" href="#shop">Shop now</a>
+        </div>
+        <div class="hero-card" aria-label="Featured crochet item">
+          <div class="hero-badge">Best seller</div>
+          <h3>Boho Market Tote</h3>
+          <p>Sturdy, stylish, and perfect for your daily essentials.</p>
+          <span>$34</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="features container" aria-label="Why choose us">
+        <article>
+          <h3>Custom orders</h3>
+          <p>Choose colors, sizes, and details for the perfect gift.</p>
+        </article>
+        <article>
+          <h3>Made to last</h3>
+          <p>Each piece is crafted carefully with durable stitches and cozy texture.</p>
+        </article>
+        <article>
+          <h3>Thoughtful gifts</h3>
+          <p>Ideal for birthdays, baby showers, home decor, and winter comfort.</p>
+        </article>
+      </section>
+
+      <section class="products container" id="shop">
+        <div class="section-heading">
+          <p class="eyebrow">Featured collections</p>
+          <h2>Crochet kitchen items and bouquets</h2>
+        </div>
+
+        <div class="product-group">
+          <h3>Crochet kitchen</h3>
+          <div class="product-grid">
+            <article class="card">
+              <div class="card-visual visual-one"></div>
+              <h3>Sunflower</h3>
+              <p>Bright and cheerful kitchen crochet decor.</p>
+              <div class="card-footer">
+                <span>$5</span>
+                <a href="#contact">Order now</a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-visual visual-two"></div>
+              <h3>Daisy</h3>
+              <p>Delicate crochet detail to brighten your kitchen.</p>
+              <div class="card-footer">
+                <span>$4</span>
+                <a href="#contact">Order now</a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-visual visual-three"></div>
+              <h3>Heart</h3>
+              <p>Sweet handmade accent for a cozy space.</p>
+              <div class="card-footer">
+                <span>$2</span>
+                <a href="#contact">Order now</a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-visual visual-four"></div>
+              <h3>Tulip Flour</h3>
+              <p>Pretty crochet design for kitchen display.</p>
+              <div class="card-footer">
+                <span>$5</span>
+                <a href="#contact">Order now</a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="product-group">
+          <h3>Bouquate</h3>
+          <div class="product-grid">
+            <article class="card">
+              <div class="card-visual visual-one"></div>
+              <h3>Tulip (1)</h3>
+              <p>Single tulip bloom for a lovely crochet gift.</p>
+              <div class="card-footer">
+                <span>$7</span>
+                <a href="#contact">Order now</a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-visual visual-two"></div>
+              <h3>Tulip + Lavender</h3>
+              <p>One tulip and one lavender stem bundled together.</p>
+              <div class="card-footer">
+                <span>$10</span>
+                <a href="#contact">Order now</a>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-visual visual-three"></div>
+              <h3>Sunflower (1)</h3>
+              <p>A single crochet sunflower for a bright accent.</p>
+              <div class="card-footer">
+                <span>$10</span>
+                <a href="#contact">Order now</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about container" id="about">
+        <div>
+          <p class="eyebrow">About my work</p>
+          <h2>Every stitch is made with care.</h2>
+          <p>
+            I create handmade crochet pieces that bring warmth, personality, and charm to your home or wardrobe.
+            Whether you want a cozy gift or a custom order, I’m here to help you find something special.
+          </p>
+        </div>
+        <div class="quote-box">
+          <p>“Crochet is my way of turning yarn into comfort and beauty.”</p>
+        </div>
+      </section>
+
+      <section class="contact container" id="contact">
+        <div class="section-heading">
+          <p class="eyebrow">Contact & orders</p>
+          <h2>Let’s make something lovely together.</h2>
+        </div>
+        <form class="contact-form" id="order-form">
+          <input type="text" name="name" placeholder="Your name" required />
+          <input type="email" name="email" placeholder="Your email" required />
+          <textarea name="message" rows="4" placeholder="Tell me which item you’d like to order or customize." required></textarea>
+          <button class="btn btn-primary" type="submit">Send request</button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <p>© <span id="year"></span> Cozy Crochet Studio</p>
+        <p>Email: hello@cozycrochetstudio.com</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
