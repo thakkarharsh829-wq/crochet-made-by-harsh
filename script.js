@@ -168,13 +168,11 @@
     const orderDetails = `Name: ${name}\nPhone: ${phone}\nAddress: ${address}\n\nItems:\n${items}\n\nTotal: ${total}\nPayment: Cash on Delivery`;
 
     // Send email via EmailJS
-    // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your EmailJS values
     emailjs.send('service_58gxyxg', 'template_s2kvwm7', {
-      from_name: name,
-      from_phone: phone,
-      from_address: address,
-      message: orderDetails,
-      to_email: 'thakkarharsh829@gmail.com'
+      name: name,
+      phone: phone,
+      address: address,
+      order: orderDetails
     }).then(() => {
       alert(`Thank you, ${name}! Your order has been sent to Harsh. He will contact you soon.`);
       cart = [];
