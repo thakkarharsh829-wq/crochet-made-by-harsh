@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('order-form');
   const year = document.getElementById('year');
 
