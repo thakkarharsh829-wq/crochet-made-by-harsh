@@ -147,9 +147,24 @@
 
   // --- Pay Now ---
   document.getElementById('payNowBtn').addEventListener('click', () => {
+    const nameInput = document.getElementById('cartName');
+    const addressInput = document.getElementById('cartAddress');
+    const name = nameInput.value.trim();
+    const address = addressInput.value.trim();
+
+    if (!name || !address) {
+      alert('Please fill in your name and address.');
+      return;
+    }
+
     const items = cart.map(i => `${i.name} x${i.qty} = $${i.price * i.qty}`).join('\n');
     const total = `$${getTotal()}`;
-    alert(`Your order:\n\n${items}\n\nTotal: ${total}\n\nPayment: Cash on Delivery\n\nThank you, Harsh will contact you soon!`);
+    const body = `New Order!\n\nName: ${name}\nAddress: ${address}\n\nItems:\n${items}\n\nTotal: ${total}\n\nPayment: Cash on Delivery`;
+    const subject = encodeURIComponent(`New Order from ${name}`);
+    const bodyEncoded = encodeURIComponent(body);
+    window.open(`mailto:thakkarharsh829@gmail.com?subject=${subject}&body=${bodyEncoded}`);
+
+    alert(`Thank you, ${name}! Your order has been sent to Harsh. He will contact you soon.`);
     cart = [];
     saveCart();
     updateBadges();
