@@ -12,6 +12,10 @@
 
   if (year) year.textContent = new Date().getFullYear();
 
+  // --- EmailJS Init ---
+  // Replace 'YOUR_PUBLIC_KEY' with your EmailJS public key
+  emailjs.init('YOUR_PUBLIC_KEY');
+
   // --- Cart State ---
   let cart = JSON.parse(localStorage.getItem('crochet_cart') || '[]');
 
@@ -161,17 +165,38 @@
 
     const items = cart.map(i => `${i.name} x${i.qty} = $${i.price * i.qty}`).join('\n');
     const total = `$${getTotal()}`;
-    const body = `New Order!\n\nName: ${name}\nPhone: ${phone}\nAddress: ${address}\n\nItems:\n${items}\n\nTotal: ${total}\n\nPayment: Cash on Delivery`;
-    const subject = encodeURIComponent(`New Order from ${name}`);
-    const bodyEncoded = encodeURIComponent(body);
-    window.open(`mailto:thakkarharsh829@gmail.com?subject=${subject}&body=${bodyEncoded}`);
+    const orderDetails = `Name: ${name}\nPhone: ${phone}\nAddress: ${address}\n\nItems:\n${items}\n\nTotal: ${total}\nPayment: Cash on Delivery`;
 
-    alert(`Thank you, ${name}! Your order has been sent to Harsh. He will contact you soon.`);
-    cart = [];
-    saveCart();
-    updateBadges();
-    updateButtonStates();
-    closeCart();
+    // Send email via EmailJS
+    // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your EmailJS values
+    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+      from_name: name,
+      from_phone: phone,
+      from_address: address,
+      message: orderDetails,
+      to_email: 'thakkarharsh829@gmail.com'
+    }).then(() => {
+      alert(`Thank you, ${name}! Your order has been sent to Harsh. He will contact you soon.`);
+      cart = [];
+      saveCart();
+      updateBadges();
+      updateButtonStates();
+      closeCart();
+      nameInput.value = '';
+      phoneInput.value = '';
+      addressInput.value = '';
+    }).catch(() => {
+      // Fallback: open email app
+      const subject = encodeURIComponent(`New Order from ${name}`);
+      const bodyEncoded = encodeURIComponent(orderDetails);
+      window.open(`mailto:thakkarharsh829@gmail.com?subject=${subject}&body=${bodyEncoded}`);
+      alert(`Thank you, ${name}! Your order has been sent. Harsh will contact you soon.`);
+      cart = [];
+      saveCart();
+      updateBadges();
+      updateButtonStates();
+      closeCart();
+    });
   });
 
   // --- Contact form removed (replaced with reviews) ---
