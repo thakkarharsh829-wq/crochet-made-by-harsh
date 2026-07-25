@@ -169,10 +169,7 @@
 
     // Send email via EmailJS
     emailjs.send('service_58gxyxg', 'template_s2kvwm7', {
-      name: name,
-      phone: phone,
-      address: address,
-      order: orderDetails
+      message: orderDetails
     }).then(() => {
       alert(`Thank you, ${name}! Your order has been sent to Harsh. He will contact you soon.`);
       cart = [];
