@@ -616,6 +616,27 @@ h1 {
   background: #fff;
 }
 
+.cart-bottom {
+  padding: 0 1.25rem 1.25rem;
+  background: #fff;
+}
+
+.cart-input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+  padding: 0.7rem 0.9rem;
+  font: inherit;
+  background: #fffdfa;
+  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.cart-textarea {
+  resize: vertical;
+  margin-bottom: 0.8rem;
+}
+
 .cart-total {
   display: flex;
   justify-content: space-between;
