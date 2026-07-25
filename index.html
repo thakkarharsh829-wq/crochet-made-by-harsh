@@ -174,16 +174,41 @@
 
       <section class="contact container" id="contact">
         <div class="section-heading">
-          <p class="eyebrow">Contact & orders</p>
-          <h2>Let's make something lovely together.</h2>
+          <p class="eyebrow">Customer Reviews</p>
+          <h2>What our customers say</h2>
         </div>
-        <form class="contact-form" id="order-form">
-          <input type="text" name="name" placeholder="Your name" required />
-          <input type="email" name="email" placeholder="Your email" required />
-          <input type="tel" name="phone" placeholder="Your phone number" required />
-          <textarea name="message" rows="4" placeholder="Tell me which item you'd like to order. Cash on delivery available." required></textarea>
-          <button class="btn btn-primary" type="submit">Order now</button>
-        </form>
+        <div class="reviews-grid" id="reviewsGrid">
+          <div class="review-card">
+            <div class="review-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+            <p>"Beautiful craftsmanship! The sunflower kitchen piece is even prettier in person."</p>
+            <span class="review-author">— Happy Customer</span>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+            <p>"Ordered a tulip bouquet as a gift. It arrived quickly and looks amazing!"</p>
+            <span class="review-author">— Satisfied Buyer</span>
+          </div>
+          <div class="review-card">
+            <div class="review-stars">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
+            <p>"Harsh is so talented. The quality and detail in every piece is incredible."</p>
+            <span class="review-author">— Repeat Customer</span>
+          </div>
+        </div>
+        <div class="add-review">
+          <h3>Leave a review</h3>
+          <form class="contact-form" id="review-form">
+            <input type="text" name="name" placeholder="Your name" required />
+            <div class="star-select" id="starSelect">
+              <span data-star="1">&#11088;</span>
+              <span data-star="2">&#11088;</span>
+              <span data-star="3">&#11088;</span>
+              <span data-star="4">&#11088;</span>
+              <span data-star="5">&#11088;</span>
+            </div>
+            <textarea name="review" rows="3" placeholder="Share your experience..." required></textarea>
+            <button class="btn btn-primary" type="submit">Submit review</button>
+          </form>
+        </div>
       </section>
     </main>
 

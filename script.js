@@ -157,17 +157,49 @@
     closeCart();
   });
 
-  // --- Order form ---
-  if (form) {
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const name = form.elements.namedItem('name')?.value?.trim() || 'there';
-      alert(`Thank you, ${name}! Your request has been received. Harsh will be in touch soon.`);
-      form.reset();
-    });
-  }
+  // --- Contact form removed (replaced with reviews) ---
 
   // --- Init ---
   updateBadges();
   updateButtonStates();
+
+  // --- Star Rating ---
+  const starSelect = document.getElementById('starSelect');
+  let selectedStars = 0;
+  if (starSelect) {
+    starSelect.querySelectorAll('span').forEach(star => {
+      star.addEventListener('click', () => {
+        selectedStars = parseInt(star.dataset.star);
+        starSelect.querySelectorAll('span').forEach(s => {
+          s.classList.toggle('active', parseInt(s.dataset.star) <= selectedStars);
+        });
+      });
+    });
+  }
+
+  // --- Review Form ---
+  const reviewForm = document.getElementById('review-form');
+  if (reviewForm) {
+    reviewForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = reviewForm.elements.namedItem('name')?.value?.trim() || 'Someone';
+      const review = reviewForm.elements.namedItem('review')?.value?.trim();
+      const stars = '⭐'.repeat(selectedStars || 5);
+
+      const grid = document.getElementById('reviewsGrid');
+      const card = document.createElement('div');
+      card.className = 'review-card';
+      card.innerHTML = `
+        <div class="review-stars">${stars}</div>
+        <p>"${review}"</p>
+        <span class="review-author">— ${name}</span>
+      `;
+      grid.prepend(card);
+
+      alert(`Thank you, ${name}! Your review has been added.`);
+      reviewForm.reset();
+      selectedStars = 0;
+      starSelect.querySelectorAll('span').forEach(s => s.classList.remove('active'));
+    });
+  }
 });
