@@ -14,7 +14,7 @@
 
   // --- EmailJS Init ---
   // Replace 'YOUR_PUBLIC_KEY' with your EmailJS public key
-  emailjs.init('YOUR_PUBLIC_KEY');
+  emailjs.init('2IjR7rmXUJLK-V1-8');
 
   // --- Cart State ---
   let cart = JSON.parse(localStorage.getItem('crochet_cart') || '[]');
@@ -169,7 +169,7 @@
 
     // Send email via EmailJS
     // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your EmailJS values
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+    emailjs.send('service_58gxyxg', 'template_s2kvwm7', {
       from_name: name,
       from_phone: phone,
       from_address: address,
