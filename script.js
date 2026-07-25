@@ -148,18 +148,20 @@
   // --- Pay Now ---
   document.getElementById('payNowBtn').addEventListener('click', () => {
     const nameInput = document.getElementById('cartName');
+    const phoneInput = document.getElementById('cartPhone');
     const addressInput = document.getElementById('cartAddress');
     const name = nameInput.value.trim();
+    const phone = phoneInput.value.trim();
     const address = addressInput.value.trim();
 
-    if (!name || !address) {
-      alert('Please fill in your name and address.');
+    if (!name || !phone || !address) {
+      alert('Please fill in your name, phone number, and address.');
       return;
     }
 
     const items = cart.map(i => `${i.name} x${i.qty} = $${i.price * i.qty}`).join('\n');
     const total = `$${getTotal()}`;
-    const body = `New Order!\n\nName: ${name}\nAddress: ${address}\n\nItems:\n${items}\n\nTotal: ${total}\n\nPayment: Cash on Delivery`;
+    const body = `New Order!\n\nName: ${name}\nPhone: ${phone}\nAddress: ${address}\n\nItems:\n${items}\n\nTotal: ${total}\n\nPayment: Cash on Delivery`;
     const subject = encodeURIComponent(`New Order from ${name}`);
     const bodyEncoded = encodeURIComponent(body);
     window.open(`mailto:thakkarharsh829@gmail.com?subject=${subject}&body=${bodyEncoded}`);
