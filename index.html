@@ -18,6 +18,9 @@
           <a href="#shop">Shop</a>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
+          <button class="cart-toggle" id="cartToggle">
+            &#128722; Cart <span class="cart-badge" id="cartBadge">0</span>
+          </button>
         </div>
       </nav>
 
@@ -64,7 +67,7 @@
               <p>Bright and cheerful kitchen crochet decor.</p>
               <div class="card-footer">
                 <span>$5</span>
-                <a href="#contact">Order now</a>
+                <button class="btn-add-cart" data-name="Sunflower" data-price="5" data-img="photo%201.jpg">Add to cart</button>
               </div>
             </article>
             <article class="card">
@@ -73,7 +76,7 @@
               <p>Delicate crochet detail to brighten your kitchen.</p>
               <div class="card-footer">
                 <span>$4</span>
-                <a href="#contact">Order now</a>
+                <button class="btn-add-cart" data-name="Daisy" data-price="4" data-img="photo%208.jpg">Add to cart</button>
               </div>
             </article>
             <article class="card">
@@ -82,7 +85,7 @@
               <p>Sweet handmade accent for a cozy space.</p>
               <div class="card-footer">
                 <span>$2</span>
-                <a href="#contact">Order now</a>
+                <button class="btn-add-cart" data-name="Heart" data-price="2" data-img="photo%2015.jpg">Add to cart</button>
               </div>
             </article>
             <article class="card">
@@ -91,7 +94,7 @@
               <p>Pretty crochet design for kitchen display.</p>
               <div class="card-footer">
                 <span>$5</span>
-                <a href="#contact">Order now</a>
+                <button class="btn-add-cart" data-name="Tulip Flour" data-price="5" data-img="photo%2010.jpg">Add to cart</button>
               </div>
             </article>
           </div>
@@ -106,7 +109,7 @@
               <p>Single tulip bloom for a lovely crochet gift.</p>
               <div class="card-footer">
                 <span>$7</span>
-                <a href="#contact">Order now</a>
+                <button class="btn-add-cart" data-name="Tulip (1)" data-price="7" data-img="photo%203.jpg">Add to cart</button>
               </div>
             </article>
             <article class="card">
@@ -115,7 +118,7 @@
               <p>One tulip and one lavender stem bundled together.</p>
               <div class="card-footer">
                 <span>$10</span>
-                <a href="#contact">Order now</a>
+                <button class="btn-add-cart" data-name="Tulip + Lavender" data-price="10" data-img="photo%205.jpg">Add to cart</button>
               </div>
             </article>
             <article class="card">
@@ -124,7 +127,7 @@
               <p>A single crochet sunflower for a bright accent.</p>
               <div class="card-footer">
                 <span>$10</span>
-                <a href="#contact">Order now</a>
+                <button class="btn-add-cart" data-name="Sunflower (1)" data-price="10" data-img="photo%206.jpg">Add to cart</button>
               </div>
             </article>
             <article class="card">
@@ -133,7 +136,7 @@
               <p>A single crochet lavender stem for a calming touch.</p>
               <div class="card-footer">
                 <span>$3</span>
-                <a href="#contact">Order now</a>
+                <button class="btn-add-cart" data-name="Lavender (1)" data-price="3" data-img="photo%204.jpg">Add to cart</button>
               </div>
             </article>
           </div>
@@ -183,6 +186,32 @@
         </form>
       </section>
     </main>
+
+    <!-- Cart Drawer -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer">
+      <div class="cart-drawer-header">
+        <h3>Your Cart</h3>
+        <button class="cart-close" id="cartClose">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-empty" id="cartEmpty">
+        <p>Your cart is empty</p>
+      </div>
+      <div class="cart-footer" id="cartFooter">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cartTotal">$0</span>
+        </div>
+        <button class="btn btn-primary btn-full" id="payNowBtn">Pay now</button>
+        <p class="cart-note">Cash on delivery available</p>
+      </div>
+    </div>
+
+    <!-- Floating Cart Button (mobile) -->
+    <button class="floating-cart" id="floatingCart">
+      &#128722; <span class="floating-badge" id="floatingBadge">0</span>
+    </button>
 
     <footer class="footer">
       <div class="container footer-content">
