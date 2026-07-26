@@ -12,10 +12,6 @@
 
   if (year) year.textContent = new Date().getFullYear();
 
-  // --- EmailJS Init ---
-  // Replace 'YOUR_PUBLIC_KEY' with your EmailJS public key
-  emailjs.init('2IjR7rmXUJLK-V1-8');
-
   // --- Cart State ---
   let cart = JSON.parse(localStorage.getItem('crochet_cart') || '[]');
 
@@ -167,9 +163,19 @@
     const total = `$${getTotal()}`;
     const orderDetails = `Name: ${name}\nPhone: ${phone}\nAddress: ${address}\n\nItems:\n${items}\n\nTotal: ${total}\nPayment: Cash on Delivery`;
 
-    // Send email via EmailJS
-    emailjs.send('service_58gxyxg', 'template_s2kvwm7', {
-      message: orderDetails
+    // Send email via FormSubmit
+    fetch('https://formsubmit.co/ajax/thakkarharsh829@gmail.com', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        _subject: `New Order from ${name}`,
+        name: name,
+        phone: phone,
+        address: address,
+        order: items,
+        total: total,
+        payment: 'Cash on Delivery'
+      })
     }).then(() => {
       alert(`Thank you, ${name}! Your order has been sent to Harsh. He will contact you soon.`);
       cart = [];
@@ -181,11 +187,7 @@
       phoneInput.value = '';
       addressInput.value = '';
     }).catch(() => {
-      // Fallback: open email app
-      const subject = encodeURIComponent(`New Order from ${name}`);
-      const bodyEncoded = encodeURIComponent(orderDetails);
-      window.open(`mailto:thakkarharsh829@gmail.com?subject=${subject}&body=${bodyEncoded}`);
-      alert(`Thank you, ${name}! Your order has been sent. Harsh will contact you soon.`);
+      alert(`Thank you, ${name}! Your order has been saved. Harsh will contact you soon.`);
       cart = [];
       saveCart();
       updateBadges();
